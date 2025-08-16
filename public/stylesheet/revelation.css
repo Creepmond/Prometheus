@@ -1,0 +1,105 @@
+@media (width >= 675px) {
+  .revelation-container {
+    word-break: normal;
+  }
+}
+@media (width < 675px) {
+  .revelation-container {
+    word-break: break-all;
+  }
+}
+
+.revelation-container {
+  font-size: 20px;
+
+  margin: 50px 50px 0 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.revelation-container:first-child {
+  margin-top: 50px;
+}
+.revelation {
+  background-color: rgb(43, 119, 239, var(--bg-opacity));
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 952x;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  display: flexbox;
+  flex-direction: row;
+
+  position: relative;
+}
+
+.revelation .identifier {
+  background-color: rgba(35, 152, 219, var(--bg-opacity));
+}
+
+.revelation .title {
+  background-color: rgba(222, 184, 135, var(--bg-opacity));
+
+  font-size: 35px;
+
+  display: inline;
+}
+
+.revelation .date {
+  font-size: 18px;
+  font-weight: 300;
+
+  opacity: 0.6;
+
+  margin: 0 0 3px 8px;
+}
+
+.revelation .description {
+  background-color: rgba(71, 61, 255, var(--bg-opacity));
+
+  margin: 10px 0;
+}
+
+.revelation .tags {
+  user-select: none;
+
+  background-color: rgba(255, 20, 145, var(--bg-opacity));
+
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.revelation .tag {
+  cursor: pointer;
+  user-select: none;
+  
+  font-size: 16px;
+
+  padding: 5px 16px;
+
+  border-radius: 13px;
+
+  display: inline-block;
+
+  box-shadow: inset -1px -1px 5px rgb(0, 0, 0, 0.15);
+}
+
+.revelation .tag:hover {
+  color: var(--primary-accent);
+
+  outline: 1px solid var(--primary-accent);
+}
+
+.revelation .tag:active {
+  color: var(--primary-dark-accent);
+
+  outline: 1px solid var(--primary-dark-accent);
+}

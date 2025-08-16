@@ -1,11 +1,11 @@
 :root {
-  --primary-dark: hsl(0, 0%, 12%);
-  --secondary-dark: hsl(0, 0%, 9%);
-  --tertiary-dark: hsl(0, 0%, 6%);
+  --primary-dark: hsl(230, 2%, 18%);
+  --secondary-dark: hsl(230, 2%, 15%);
+  --tertiary-dark: hsl(230, 2%, 12%);
 }
 
 body.dark-theme {
-  background-color: black;
+  background-color: hsl(230, 2%, 9%);
 }
 
 body.dark-theme span,
@@ -14,13 +14,27 @@ body.dark-theme p {
   color: white;
 }
 
-body.dark-theme header {
-  background-color: var(--secondary-dark);
-}
-
 body.dark-theme header .title {
   background-color: var(--primary-dark);
 }
+
+body.dark-theme header,
+body.dark-theme .revelation {
+  background-color: var(--secondary-dark);
+}
+
+body.dark-theme .tag {
+  background-color: var(--tertiary-dark);
+}
+
+body.dark-theme header {
+  border-bottom: 1px solid var(--tertiary-dark);
+  box-shadow: 0 0 5px black;
+}
+
+
+
+/*/ Scrollbar */
 
 body.dark-theme main::-webkit-scrollbar-track {
   background: var(--tertiary-dark);
