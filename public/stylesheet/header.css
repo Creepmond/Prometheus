@@ -1,0 +1,105 @@
+header {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+}
+
+
+
+/*/ Title Section */
+
+header .title-section {
+  background-color: rgba(153, 50, 204, var(--bg-opacity));
+}
+
+header .title {
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+
+  position: absolute;
+  left: 15px;
+  width: 220px;
+  top: 15px;
+  height: 50px;
+
+  box-shadow: 0 0 4px -3px black;
+}
+
+header .title .logo {
+  justify-self: center;
+}
+
+header .title .name {
+  height: 34px;
+
+  font-size: 25px;
+}
+
+/*/ END - Title Section */
+
+
+
+
+
+/*/ Search Section */
+
+header .search-section {
+  background-color: rgba(76, 238, 35, var(--bg-opacity));
+
+  display: flex;
+  align-items: center;
+}
+
+header .filter-search,
+header .search-bar,
+header .search-button {
+  background-color: white;
+
+  height: 32px;
+}
+
+header .filter-search {
+  font-size: 14px;
+  font-weight: 550;
+
+  margin-left: 20px;
+
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+header .search-bar {
+  flex: 1;
+  max-width: 500px;
+
+  border-left: 1px solid grey;
+
+  padding-left: 10px;
+}
+
+header .search-button {
+  opacity: 0.9;
+
+  width: 32px;
+
+  margin-right: 20px;
+
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+
+  transition: opacity 0.15s;
+}
+
+header .search-button:active {
+  opacity: 0.85;
+}
+
+/*/ END - Search Section */
+
+
+
+header .personal-section {
+  background-color: rgba(192, 102, 18, var(--bg-opacity));
+}

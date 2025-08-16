@@ -1,0 +1,113 @@
+:root {
+  --bg-opacity: .;
+
+  --primary-accent: #48bfe3;
+  --primary-light-accent: #97d5e7;
+  --primary-dark-accent: rgb(72, 191, 227, 0.55);
+}
+
+body {
+  margin: 0;
+  padding: 80px 0 0 0;
+
+  overflow: hidden;
+}
+
+span, div, p {
+  font-family: Funnel Sans, Arial, Sans-serif;
+}
+
+img.icon {
+  height: 20px;
+}
+
+header {
+  cursor: default;
+
+  /*background-color: rgb(135, 95, 0, var(--bg-opacity));*/
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0px;
+  height: 80px;
+}
+
+main {
+  height: calc(100vh - 80px);
+
+  overflow-y: scroll;
+}
+
+button,
+select, 
+input {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+button,
+select {
+  cursor: pointer;
+
+  transition: opacity 0.15s;
+}
+
+button:active,
+select:active {
+  opacity: 0.9;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  color: black;
+
+  width: fit-content;
+
+  align-items: center;
+
+  padding: 0 10px 0 10px;
+
+  border-radius: 0;
+}
+
+select::picker-icon {
+  transition: rotate 0.2s;
+}
+select:open::picker-icon {
+  rotate: -180deg;
+}
+
+option {
+  font-size: 16px;
+  font-weight: 400;
+
+  transition: all 0.15s;
+}
+
+option:hover,
+option:focus {
+  background: var(--primary-light-accent);
+}
+
+main::-webkit-scrollbar {
+  width: 12px;
+}
+
+main::-webkit-scrollbar-thumb {
+  cursor: grab;
+}
+
+main::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
+}
