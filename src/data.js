@@ -1,68 +1,123 @@
 export const revelations = [
   {
     name: [
-      'Octadecafluorooctane',
-      'octadecafluorooctane'
+      {
+        text: 'Immortalization',
+        color: '#33faeb',  
+      },
     ],
-    description: [
-      'All mediums are stagnant, until realized. Then, the gears shift in motion.'
-    ],
-    date: [
-      'Aug 08, 0:03 PM'
+    version: [
+      {
+        date: 'Aug 08, 0:03 PM',
+        description: [
+          'All mediums are stagnant, until realized. Then, the gears shift in motion.',
+        ],
+        association: [],
+      },
     ],
     tags: {
-      dual: false,
-      meta: false,
+      Meta: 'Meta',
     },
-    color: ['#33faeb', '#194eab'],
-    association: [],
   },
+
+
   {
-    name: ['Memory'],
-    description: [
-      'The general degree of Memory is those of the past.',
-      'Prophecies are Memories of the future.'
+    name: [
+      {
+        text: 'Memory',
+        color: '#af5ae0',  
+      },
     ],
-    date: [
-      'Aug 02, 11:06 AM'
+    version: [
+      {
+        date: 'Aug 02, 11:06 AM',
+        description: [
+          'The general degree of is those of the past.',
+          'Prophecies are Memories of the future.',
+        ],
+        association: ['Time'],
+      },
     ],
     tags: {
-      dual: false,
-      meta: false,
+
     },
-    color: ['#af5ae0'],
-    association: [
-      'Time'
-    ],
   },
+
+
   {
-    name: ['Forgettance'],
-    description: [
-      'Please do not forget.'
+    name: [
+      {
+        text: 'Forgettance',
+        color: '#8848ee',  
+      },
     ],
-    date: [
-      'Aug 06, 4:27 AM'
+    version: [
+      {
+        date: 'Aug 06, 4:27 AM',
+        description: [
+          'Please do not forget.',
+        ],
+        association: [],
+      },
     ],
     tags: {
-      dual: false,
-      meta: false,
+
     },
-    color: ['#8848ee'],
-    association: [],
   },
+
+
   {
-    name: ['Smiles'],
-    description: [
-      'Is of many constructs; genuine, schadenfreude, conformity.'
+    name: [
+      {
+        text: 'Smile',
+        color: '#ecea71',  
+      },
     ],
-    date: [
-      'Aug 02, 5:51 PM'
+    version: [
+      {
+        date: 'Aug 02, 5:51 PM',
+        description: [
+          'Is of many constructs; genuine, schadenfreude, conformity.',
+        ],
+        association: [],
+      },
     ],
     tags: {
-      dual: false,
-      meta: false,
+
     },
-    color: ['#ecea71ff'],
-    association: [],
   },
+
+
+  {
+    name: [
+      {
+        text: 'Cycles',
+        color: '#62ef8c',  
+      },
+      {
+        text: 'Process',
+        color: '#40cfe2',  
+      },
+    ],
+    version: [
+      {
+        date: 'Aug 05, 3:14 AM',
+        description: [
+          'Can be categorized as Fate and Duality.',
+          'The treadmill one walks is either a Process, or a Cycle. Building your legs is to walk a Cycle to Process muslce growth.'
+        ],
+      },
+      {
+        date: 'Aug 16, 7:20 PM',
+        description: [
+          'We tread on a mill. A Cycle to nowhere; to Progress to vitality.',
+          'All Progress becomes a Cycle if Forgotten.',
+        ],
+        association: [],
+      }
+    ],
+    tags: {
+      Dual: 'Dual',
+    },
+  }
 ]

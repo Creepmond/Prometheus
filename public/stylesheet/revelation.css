@@ -8,7 +8,7 @@
     word-break: break-all;
   }
 }
-
+/*!suggestion to self: create a "sort by" element, steal from google drive*/
 .revelation-container {
   font-size: 20px;
 
@@ -23,12 +23,15 @@
 .revelation-container:first-child {
   margin-top: 50px;
 }
+.revelation-container:last-child {
+  margin-bottom: 50px;
+}
 .revelation {
   background-color: rgb(43, 119, 239, var(--bg-opacity));
 
   box-sizing: border-box;
   width: 100%;
-  max-width: 952x;
+  max-width: 925px;
 
   padding: 20px;
 
@@ -53,18 +56,37 @@
 }
 
 .revelation .date {
+  background-color: rgba(129, 255, 42, var(--bg-opacity));
+  user-select: none;
+
   font-size: 18px;
   font-weight: 300;
+
+  padding: 4px 6px;
+  border-radius: 5px;
 
   opacity: 0.6;
 
   margin: 0 0 3px 8px;
+}
+.revelation .date:hover {
+  outline: 2px solid var(--primary-accent);
+}
+.revelation .date:active {
+  outline: 1px solid var(--primary-dark-accent);
 }
 
 .revelation .description {
   background-color: rgba(71, 61, 255, var(--bg-opacity));
 
   margin: 10px 0;
+}
+.revelation .bullet {
+  display: block;
+}
+.revelation .bullet::before {
+  content: '| ';
+  color: grey;
 }
 
 .revelation .tags {
@@ -84,6 +106,8 @@
   font-size: 16px;
 
   padding: 5px 16px;
+
+  margin-left: 8px;
 
   border-radius: 13px;
 

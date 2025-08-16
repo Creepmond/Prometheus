@@ -1,41 +1,91 @@
 import { revelations } from './data.js'
 
-const contentContainer = document.querySelector('.revelation-container');
-let linesHtml = '';
 
-revelations.forEach((content) => {
-  linesHtml += `
-    <div class="revelation ${content.name[0].toLowerCase()}">
-      <div class="identifier">
-        <div class="title">
-          <span class="pair one" style="color:${content.color[0]};text-shadow:0 0 8px ${content.color[0]}22">${content.name[0]}</span> &
-          <span class="pair two" style="color:${content.color[1]};text-shadow:0 0 8px ${content.color[1]}22">${content.name[1]}</span>
-        </div>
-        <span class="date">${content.date}</span>
-      </div>
 
-      <div class="description">
-        <span class="bullet1">${content.description[0]}</span>
-      </div>
+/// HTML
 
-      <div class="tags">
-        <div class="tag">Meta</div>
-        <div class="tag">Dual</div>
-      </div>
-      <span class="association"></span>
-    </div>
-  `
-})
+const revelationContainer = document.querySelector('.revelation-container');
+let revelationHtml = {
+  block: '',
+  title: '',
+  version: [
+    {
+    date: '',
+    description: '',
+    }
+  ],
+  tags: '',
+};
 
-contentContainer.innerHTML += linesHtml;
-
-/*const numberOfRevelations = 50;
-
-const contentContainer = document.querySelector('.content-container');
-let linesHtml = '';
-
-for (let i = 1; i <= numberOfRevelations; i++) {
-  linesHtml += `<p>Lorem Ipsum</p>`
+function isDualRevelation(content) {
+  if (!content.tags.Dual) {
+    revelationHtml.title = `
+      <span style="color:${content.name[0].color};text-shadow:0 0 8px ${content.name[0].color}44">${content.name[0].text}</span>
+    `;
+  }
+  else {
+    revelationHtml.title = `
+      <span class="pair one" style="color:${content.name[0].color};text-shadow:0 0 8px ${content.name[0].color}44">${content.name[0].text}</span> &
+      <span class="pair two" style="color:${content.name[1].color};text-shadow:0 0 8px ${content.name[1].color}44">${content.name[1].text}</span>
+    `;
+  }
 }
 
-contentContainer.innerHTML += linesHtml*/
+function latestVersion(content) {
+  const latestDate = content.version.toReversed();
+  revelationHtml.date = latestDate[0].date;
+}
+
+function hasMultipleDescriptions(content) {//wow this is abhorrent... just take notice that yes, this writing is terrible, ill try refactoring it when i can actually understand what im doing
+  if (content.version[0].description.length === 1) {
+    revelationHtml.version[0].description = `
+      <span class="bullet bul0">${content.version[0].description}</span>
+    `;
+  }
+  else {
+    const latestDescriptions = content.version.toReversed();
+
+    revelationHtml.version[0].description = '';
+    latestDescriptions[0].description.forEach((desc, index) => {
+      revelationHtml.version[0].description += `<span class="bullet bul${index}">${desc}</span>`
+    })
+  }
+}
+
+function hasSearchTags(content) {
+  revelationHtml.tags = '';
+  Object.keys(content.tags).forEach((tag) => {
+    revelationHtml.tags += `<div class="tag">${tag}</div>`;
+  })
+}
+
+revelations.forEach((content) => {
+  isDualRevelation(content)
+  latestVersion(content)
+  hasMultipleDescriptions(content)
+  hasSearchTags(content)
+
+  revelationHtml.block += `
+    <div class="revelation ${content.name[0].text.toLowerCase()}"><!--be careful here, i should find a way to check (if only it has) two names-->
+      <div class="identifier">
+        <div class="title">${revelationHtml.title}</div>
+        <span class="date">${revelationHtml.date}</span>
+      </div>
+
+      <div class="description">${revelationHtml.version[0].description}</div>
+
+      <div class="tags">${revelationHtml.tags}</div>
+      <span class="association"></span>
+    </div>
+  `;
+})
+
+revelationContainer.innerHTML = revelationHtml.block;
+
+
+
+document.querySelectorAll('.revelation').forEach((block) => {
+  block.querySelector(':scope > .identifier > .date').addEventListener('click', (date) => {
+    date.classList
+  })
+})
