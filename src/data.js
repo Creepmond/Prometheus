@@ -106,6 +106,7 @@ export const revelations = [
           'Can be categorized as Fate and Duality.',
           'The treadmill one walks is either a Process, or a Cycle. Building your legs is to walk a Cycle to Process muslce growth.'
         ],
+        association: [],
       },
       {
         date: 'Aug 16, 7:20 PM',
@@ -119,5 +120,27 @@ export const revelations = [
     tags: {
       Dual: 'Dual',
     },
-  }
+  },
+
+
+  {
+    name: [
+      {
+        text: 'Exposure',
+        color: '#c90a0aff',  
+      },
+    ],
+    version: [
+      {
+        date: 'Aug 17, 2:19 PM',
+        description: [
+          'Is the mother of learning.',
+        ],
+        association: [],
+      },
+    ],
+    tags: {
+      
+    },
+  },
 ]

@@ -84,8 +84,18 @@ revelationContainer.innerHTML = revelationHtml.block;
 
 
 
+const toggleOrderHtml = document.querySelector('.organize-container .order .symbol');
+toggleOrderHtml.addEventListener('click', () => {
+  if (toggleOrderHtml.classList.contains('toggled')) {
+    toggleOrderHtml.classList.remove('toggled')
+  }
+  else {
+    toggleOrderHtml.classList.add('toggled')
+  }
+})
+
 document.querySelectorAll('.revelation').forEach((block) => {
-  block.querySelector(':scope > .identifier > .date').addEventListener('click', (date) => {
-    date.classList
+  block.querySelector(':scope > .identifier > .date').addEventListener('click', () => {
+    block.classList
   })
 })

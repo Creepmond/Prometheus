@@ -7,8 +7,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="public/stylesheet/divisions.css">
     <link rel="stylesheet" href="public/stylesheet/general.css">
     <link rel="stylesheet" href="public/stylesheet/header.css">
+    <link rel="stylesheet" href="public/stylesheet/modification.css">
     <link rel="stylesheet" href="public/stylesheet/revelation.css">
 
     <link rel="stylesheet" href="public/stylesheet/theme/dark-theme.css">
@@ -28,7 +30,7 @@
   </div>
 
   <div class="search-section">
-    <select class="filter-search">
+    <select class="filter-search"><!--suggestion to self: make this contained in a div so that i can control the options a lot better, right now i sufficed with making its contents justified to the center, but in case there are longer tags and such, its easily more modifiable-->
       <option value="all">All</option>
       <option value="dual">Dual</option>
       <option value="meta">Meta</option>
@@ -55,6 +57,25 @@
 
 
 <main class="content-container">
+  <section class="modification-container">
+    <div class="organize-container">
+      <button class="order">
+        <div class="symbol">&#x1F783;</div>
+      </button>
+      <div class="type">
+        <select>
+          <option value="name">Name</option>
+          <option value="date">Date</option>
+          <option value="bulk-by-name">Bulk by Name</option>
+          <option value="bulk-by-name">Bulk by Date</option>
+        </select>  
+      </div>
+    </div>
+    <div class="edit-container">
+      <button class="add-revelation">Announce a Revelation</button>
+      <button class="edit-revelation">Edit</button>
+    </div>
+  </section>
   <article class="revelation-container"></article>
 </main>
 

@@ -12,20 +12,12 @@
 .revelation-container {
   font-size: 20px;
 
-  margin: 50px 50px 0 50px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 10px;
 }
 
-.revelation-container:first-child {
-  margin-top: 50px;
-}
-.revelation-container:last-child {
-  margin-bottom: 50px;
-}
 .revelation {
   background-color: rgb(43, 119, 239, var(--bg-opacity));
 

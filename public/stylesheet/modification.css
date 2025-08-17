@@ -1,0 +1,87 @@
+.modification-container {
+  justify-content: space-between;
+  align-items: start;
+}
+
+.modification-container button {
+  font-size: 16px;
+
+  border-radius: 20px;
+  height: 40px;
+}
+
+.edit-container {
+  background-color: rgba(148, 0, 211, var(--bg-opacity));
+
+  display: inline-block;
+}
+.edit-container button,
+.modification-container select {
+  padding: 0 18px;
+}
+.edit-container button:hover,
+.modification-container select:hover {
+  color: var(--primary-accent);
+
+  outline: 1px solid var(--primary-accent);
+}
+.edit-container button:active,
+.modification-container select:active {
+  color: var(--primary-dark-accent);
+
+  outline: 1px solid var(--primary-dark-accent);
+}
+
+.organize-container {
+  background-color: rgba(218, 242, 121, var(--bg-opacity));
+  
+  display: inline-block;
+}
+
+/*/ Selectors */
+.organize-container .type {
+  display: inline-block;
+
+  position: relative;
+}
+.organize-container select {
+  background-color: rgba(127, 255, 212, var(--bg-opacity));
+
+  vertical-align: 4px;
+  height: 40px;
+
+  width: fit-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+}
+.organize-container select::picker-icon {
+  content: none;
+}
+
+.organize-container option {
+  padding: 2px 10px 2% 25px;
+}
+/*/ END - Selectors */
+
+
+.modification-container .order {
+  width: 40px;
+}
+.modification-container .order .symbol {
+  font-size: 18px;
+
+  height: 27px;
+  transform: scaleY(1.5);
+  
+  transition: rotate ease-out .15s;
+}
+.modification-container .order:active {
+  opacity: 0.85;
+}
+.modification-container .order .symbol.toggled {
+  rotate: 180deg;
+}

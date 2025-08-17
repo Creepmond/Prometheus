@@ -1,53 +1,82 @@
 :root {
+  --highlight-dark: hsl(230, 2%, 24%);
   --primary-dark: hsl(230, 2%, 18%);
   --secondary-dark: hsl(230, 2%, 15%);
   --tertiary-dark: hsl(230, 2%, 12%);
+  --quaternary-dark: hsl(230, 2%, 9%);
+  --box-shadow-dark: rgb(0, 0, 0);
 }
 
-body.dark-theme {
-  background-color: hsl(230, 2%, 9%);
+.dark-theme {
+  background-color: var(--quaternary-dark);
 }
 
-body.dark-theme span,
-body.dark-theme div,
-body.dark-theme p {
+.dark-theme option,
+.dark-theme button,
+.dark-theme span,
+.dark-theme div,
+.dark-theme p {
   color: white;
 }
 
-body.dark-theme header .title {
-  background-color: var(--primary-dark);
+
+
+/*/ General Accent Colors */
+
+.dark-theme header .title,
+.dark-theme .modification-container button,
+.dark-theme .modification-container select,
+.dark-theme .modification-container option {
+  background-color: var(--highlight-dark);
 }
 
-body.dark-theme header,
-body.dark-theme .revelation {
+.dark-theme header,
+.dark-theme .revelation {
   background-color: var(--secondary-dark);
 }
 
-body.dark-theme .tag {
+.dark-theme .tag {
   background-color: var(--tertiary-dark);
 }
 
-body.dark-theme header {
+/*/ END - General Accent Colors */
+
+
+
+
+
+/*/ Other */
+
+.dark-theme .revelation,
+.dark-theme .modification-container button,
+.dark-theme .modification-container select {
+  box-shadow: 2px 2px 7px -3px var(--box-shadow-dark);
+}
+
+.dark-theme header {
   border-bottom: 1px solid var(--tertiary-dark);
+
   box-shadow: 0 0 5px black;
 }
+
+/*/ END - Other */
 
 
 
 /*/ Scrollbar */
 
-body.dark-theme main::-webkit-scrollbar-track {
+.dark-theme main::-webkit-scrollbar-track {
   background: var(--tertiary-dark);
 
-  box-shadow: inset 0 0 5px rgb(0, 0, 0);
+  box-shadow: inset 0 0 5px var(--box-shadow-dark);
 }
 
-body.dark-theme main::-webkit-scrollbar-thumb {
+.dark-theme main::-webkit-scrollbar-thumb {
   background: var(--secondary-dark);
 
-  box-shadow: 0 0 5px rgb(0, 0, 0);
+  box-shadow: 0 0 5px var(--box-shadow-dark);
 }
 
-body.dark-theme main::-webkit-scrollbar-thumb:active {
+.dark-theme main::-webkit-scrollbar-thumb:active {
   background: var(--primary-dark-accent);
 }
