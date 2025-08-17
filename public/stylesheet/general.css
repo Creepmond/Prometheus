@@ -58,8 +58,6 @@ select {
 }
 option {
   outline: none;
-
-  z-index: 1;
 }
 option::checkmark {
   content: none;

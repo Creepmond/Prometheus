@@ -65,18 +65,20 @@
 
 /*/ Scrollbar */
 
-.dark-theme main::-webkit-scrollbar-track {
+.dark-theme article::-webkit-scrollbar-track {
   background: var(--tertiary-dark);
+
+  border-radius: 6px;
 
   box-shadow: inset 0 0 5px var(--box-shadow-dark);
 }
 
-.dark-theme main::-webkit-scrollbar-thumb {
-  background: var(--secondary-dark);
-
-  box-shadow: 0 0 5px var(--box-shadow-dark);
+.dark-theme article::-webkit-scrollbar-thumb {
+  background: var(--primary-dark);
+  
+  border-radius: 6px;
 }
 
-.dark-theme main::-webkit-scrollbar-thumb:active {
+.dark-theme article::-webkit-scrollbar-thumb:active {
   background: var(--primary-dark-accent);
 }

@@ -8,13 +8,13 @@
     word-break: break-all;
   }
 }
-/*!suggestion to self: create a "sort by" element, steal from google drive*/
+
 .revelation-container {
   font-size: 20px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   row-gap: 10px;
 }
 
@@ -22,8 +22,7 @@
   background-color: rgb(43, 119, 239, var(--bg-opacity));
 
   box-sizing: border-box;
-  width: 100%;
-  max-width: 925px;
+  width: calc(100% - 12px);
 
   padding: 20px;
 

@@ -4,7 +4,11 @@ export const revelations = [
       {
         text: 'Immortalization',
         color: '#33faeb',  
-      },
+      },/*
+      {
+        text: 'Octadecafluorooctane',
+        color: '#33faeb',  
+      },*/
     ],
     version: [
       {
