@@ -99,7 +99,7 @@ select.filter-search option {
 }
 
 .filter-search option:checked {
-  font-weight: bold;
+  font-weight: 700;
 }
 /*/ END - Filter Search */
 

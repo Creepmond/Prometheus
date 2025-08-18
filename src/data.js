@@ -131,7 +131,7 @@ export const revelations = [
     name: [
       {
         text: 'Exposure',
-        color: '#c90a0aff',  
+        color: '#c90a0a',  
       },
     ],
     version: [

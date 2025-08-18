@@ -1,0 +1,8 @@
+dialog {
+  background-color: var(--primary-dark);
+
+  border-radius: 8px;
+}
+dialog::backdrop {
+  background-color: #0003;
+}

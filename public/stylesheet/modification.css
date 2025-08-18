@@ -64,7 +64,16 @@
 }
 
 .organize-container option {
-  padding: 2px 10px 2% 25px;
+  padding: 2px 15px 2px 25px;
+}
+.organize-container option:hover,
+.organize-container option:focus {
+  color: black;
+
+  background: var(--primary-dark-accent);
+}
+.organize-container option:checked {
+  font-weight: 700;
 }
 /*/ END - Selectors */
 

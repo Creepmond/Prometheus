@@ -3,7 +3,7 @@
 
   --primary-accent: #48bfe3;
   --primary-light-accent: #97d5e7;
-  --primary-dark-accent: rgb(72, 191, 227, 0.55);
+  --primary-dark-accent: #3d97b3;
 }
 
 
@@ -12,6 +12,10 @@ body {
   margin: 80px 0 0 0;
 
   overflow: hidden;
+}
+
+dialog {
+  border: none;
 }
 
 select, span, div, p {
@@ -26,7 +30,7 @@ button,
 select, 
 input {
   margin: 0;
-  border: 0;
+  border: none;
   padding: 0;
 }
 
