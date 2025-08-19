@@ -84,6 +84,56 @@ revelationContainer.innerHTML = revelationHtml.block;
 
 
 
+class Toggle {
+  element = '';
+  toggleClass = '';
+
+  constructor(element, toggleClass) {
+    this.element = element;
+    this.toggleClass = toggleClass;
+
+    this.addHtmlToggle();
+  }
+
+  addHtmlToggle() {
+    const elem = document.querySelector(this.element)
+    elem.addEventListener('click', () => {
+      if (elem.classList.contains(this.toggleClass)) {
+        elem.classList.remove(this.toggleClass);
+      }
+      else {
+        elem.classList.add(this.toggleClass);
+      }
+    })
+  }
+}
+
+const toggleOrderHtml = new Toggle('.organize-container .order .symbol', 'toggled');
+
+/*
+function IsTogglable() {
+  const element = {
+    addHtmlToggle(element, toggleClass) {
+      const elem = document.querySelector(element)
+      elem.addEventListener('click', () => {
+        if (elem.classList.contains(toggleClass)) {
+          elem.classList.remove(toggleClass);
+        }
+        else {
+          elem.classList.add(toggleClass);
+        }  
+      })
+    }
+  };
+
+  return element;
+}
+
+const blank = IsTogglable();
+blank.addHtmlToggle('.organize-container .order .symbol', 'toggled');
+*/
+
+/*
 const toggleOrderHtml = document.querySelector('.organize-container .order .symbol');
 toggleOrderHtml.addEventListener('click', () => {
   if (toggleOrderHtml.classList.contains('toggled')) {
@@ -93,9 +143,12 @@ toggleOrderHtml.addEventListener('click', () => {
     toggleOrderHtml.classList.add('toggled')
   }
 })
+  */
 
 document.querySelectorAll('.revelation').forEach((block) => {
   block.querySelector(':scope > .identifier > .date').addEventListener('click', () => {
     block.classList
   })
 })
+
+//12 55 06 - Modules
