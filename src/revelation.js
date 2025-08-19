@@ -2,6 +2,8 @@ import { revelations } from './data.js'
 
 
 
+//12 55 06 - Modules
+
 /// HTML
 
 const revelationContainer = document.querySelector('.revelation-container');
@@ -17,6 +19,7 @@ let revelationHtml = {
   tags: '',
 };
 
+/*
 function isDualRevelation(content) {
   if (!content.tags.Dual) {
     revelationHtml.title = `
@@ -51,19 +54,20 @@ function hasMultipleDescriptions(content) {//wow this is abhorrent... just take 
     })
   }
 }
-
-function hasSearchTags(content) {
+  
+function searchTags(content) {
   revelationHtml.tags = '';
   Object.keys(content.tags).forEach((tag) => {
     revelationHtml.tags += `<div class="tag">${tag}</div>`;
   })
 }
+  */
 
 revelations.forEach((content) => {
-  isDualRevelation(content)
+  /*isDualRevelation(content)
   latestVersion(content)
   hasMultipleDescriptions(content)
-  hasSearchTags(content)
+  searchTags(content)*/
 
   revelationHtml.block += `
     <div class="revelation ${content.name[0].text.toLowerCase()}"><!--be careful here, i should find a way to check (if only it has) two names-->
@@ -85,70 +89,27 @@ revelationContainer.innerHTML = revelationHtml.block;
 
 
 class Toggle {
-  element = '';
-  toggleClass = '';
+  #element = '';
+  #toggleClass = '';
 
   constructor(element, toggleClass) {
-    this.element = element;
-    this.toggleClass = toggleClass;
+    this.#element = element;
+    this.#toggleClass = toggleClass;
 
-    this.addHtmlToggle();
+    this.#addHtmlToggle();
   }
 
-  addHtmlToggle() {
-    const elem = document.querySelector(this.element)
+  #addHtmlToggle() {
+    const elem = document.querySelector(this.#element)
     elem.addEventListener('click', () => {
-      if (elem.classList.contains(this.toggleClass)) {
-        elem.classList.remove(this.toggleClass);
+      if (elem.classList.contains(this.#toggleClass)) {
+        elem.classList.remove(this.#toggleClass);
       }
       else {
-        elem.classList.add(this.toggleClass);
+        elem.classList.add(this.#toggleClass);
       }
     })
   }
 }
 
 const toggleOrderHtml = new Toggle('.organize-container .order .symbol', 'toggled');
-
-/*
-function IsTogglable() {
-  const element = {
-    addHtmlToggle(element, toggleClass) {
-      const elem = document.querySelector(element)
-      elem.addEventListener('click', () => {
-        if (elem.classList.contains(toggleClass)) {
-          elem.classList.remove(toggleClass);
-        }
-        else {
-          elem.classList.add(toggleClass);
-        }  
-      })
-    }
-  };
-
-  return element;
-}
-
-const blank = IsTogglable();
-blank.addHtmlToggle('.organize-container .order .symbol', 'toggled');
-*/
-
-/*
-const toggleOrderHtml = document.querySelector('.organize-container .order .symbol');
-toggleOrderHtml.addEventListener('click', () => {
-  if (toggleOrderHtml.classList.contains('toggled')) {
-    toggleOrderHtml.classList.remove('toggled')
-  }
-  else {
-    toggleOrderHtml.classList.add('toggled')
-  }
-})
-  */
-
-document.querySelectorAll('.revelation').forEach((block) => {
-  block.querySelector(':scope > .identifier > .date').addEventListener('click', () => {
-    block.classList
-  })
-})
-
-//12 55 06 - Modules

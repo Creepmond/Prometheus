@@ -1,3 +1,41 @@
+class Revelation {
+  name;
+  version;
+  tags;
+
+  constructor(revelationDetails, requestedVersion) {
+    this.name = revelationDetails.name;
+    this.version = revelationDetails.version;
+    this.tags = revelationDetails.tags;
+  }
+
+  isDualRevelation() {
+
+  }
+
+  #latestVersion() {
+
+  }
+  ////#previouslyOpenedVersion() {}
+  //// #oldestVersion() {}
+
+  whichVersion(requestedVersion) {
+    switch (requestedVersion) {
+      case 'latest': return this.#latestVersion()
+      case 'memory': ////return this.#previouslyOpenedVersion()
+      case 'oldest': ////return this.#oldestVersion()
+    }
+  }
+
+  hasMultipleDescriptions() {
+
+  }
+
+  findSearchTags() {
+
+  }
+};
+
 export const revelations = [
   {
     name: [
@@ -147,4 +185,6 @@ export const revelations = [
       
     },
   },
-]
+].map((revelationDetail) => {
+  return new Revelation(revelationDetail, 'latest');
+})
