@@ -1,43 +1,81 @@
-import { revelations } from './data.js'
+import { revelation } from './data.js'
 
 
 
-//12 55 06 - Modules
+class RevelationBlock {
+  name; version; requestedVersion; tags;
 
-/// HTML
+  constructor(revelationBlock) {
+    this.name = revelationBlock.name;
+    this.version = revelationBlock.version;
+    this.tags = revelationBlock.tags;
+  }
 
-const revelationContainer = document.querySelector('.revelation-container');
-let revelationHtml = {
-  block: '',
-  title: '',
-  version: [
-    {
-    date: '',
-    description: '',
+  isDualRevelation() {
+    return this.name.length !== 1;
+  }
+
+  #latestVersion() {
+    return this.version.toReversed();
+  }
+  ////#previouslyOpenedVersion() {}
+  
+  #oldestVersion() {
+    return this.version.toSorted();
+  }
+
+  whichVersion() {
+    const requestedVersion = revelation.requestedVersion;//problem for the future me
+
+    switch (requestedVersion) {
+      case 'latest': return this.#latestVersion();
+      case 'memory': ////return this.#previouslyOpenedVersion();
+      case 'oldest': return this.#oldestVersion();
     }
-  ],
-  tags: '',
+  }
+
+  hasMultipleDescriptions() {
+    const version = this.whichVersion();
+    return version[0].description.length !== 1;
+  }
+
+  findTags() {
+    if (this.tags.length > 0) {
+      let tagArray = [];
+      this.tags.forEach(tag => tagArray.push(tag));
+      return tagArray;
+    } else {
+      return [''];
+    }
+  }
 };
 
-/*
-function isDualRevelation(content) {
-  if (!content.tags.Dual) {
-    revelationHtml.title = `
-      <span style="color:${content.name[0].color};text-shadow:0 0 8px ${content.name[0].color}44">${content.name[0].text}</span>
-    `;
-  }
-  else {
-    revelationHtml.title = `
-      <span class="pair one" style="color:${content.name[0].color};text-shadow:0 0 8px ${content.name[0].color}44">${content.name[0].text}</span> &
-      <span class="pair two" style="color:${content.name[1].color};text-shadow:0 0 8px ${content.name[1].color}44">${content.name[1].text}</span>
-    `;
-  }
-}
+const revelationContainer = document.querySelector('.revelation-container');
+revelation.content = revelation.content.map(block => {
+  return new RevelationBlock(block)
+});
 
+/*
 function latestVersion(content) {
   const latestDate = content.version.toReversed();
   revelationHtml.date = latestDate[0].date;
 }
+
+isDualRevelation() {
+    if (this.name.length === 1) {
+      return `
+      <span style="color: ${this.name[0].color}; text-shadow:0 0 8px ${this.name[0].color}44">${this.name[0].text}</span>`
+    } 
+    else {
+      return `
+      <span class="pair one" style="color:${this.name[0].color};text-shadow:0 0 8px ${this.name[0].color}44">${this.name[0].text}</span> &
+      <span class="pair two" style="color:${this.name[1].color};text-shadow:0 0 8px ${this.name[1].color}44">${this.name[1].text}</span>
+    `;
+    }
+  }
+    let display = '';
+    Object.keys(this.tags).forEach(tag => display += `<div class="tag">${tag}</div>`)
+    return display;
 
 function hasMultipleDescriptions(content) {//wow this is abhorrent... just take notice that yes, this writing is terrible, ill try refactoring it when i can actually understand what im doing
   if (content.version[0].description.length === 1) {
@@ -63,28 +101,25 @@ function searchTags(content) {
 }
   */
 
-revelations.forEach((content) => {
-  /*isDualRevelation(content)
-  latestVersion(content)
-  hasMultipleDescriptions(content)
-  searchTags(content)*/
+let revelationHtml = '';
 
-  revelationHtml.block += `
-    <div class="revelation ${content.name[0].text.toLowerCase()}"><!--be careful here, i should find a way to check (if only it has) two names-->
+revelation.content.forEach(block => {
+  revelationHtml += `
+    <div class="revelation">
       <div class="identifier">
-        <div class="title">${revelationHtml.title}</div>
-        <span class="date">${revelationHtml.date}</span>
+        <div class="title">${block.isDualRevelation()}</div>
+        <span class="date">${2 ** 16}</span>
       </div>
 
-      <div class="description">${revelationHtml.version[0].description}</div>
+      <div class="description">${block.hasMultipleDescriptions()}</div>
 
-      <div class="tags">${revelationHtml.tags}</div>
+      <div class="tags">${block.findTags()}</div>
       <span class="association"></span>
     </div>
   `;
 })
 
-revelationContainer.innerHTML = revelationHtml.block;
+revelationContainer.innerHTML = revelationHtml;
 
 
 
@@ -104,8 +139,7 @@ class Toggle {
     elem.addEventListener('click', () => {
       if (elem.classList.contains(this.#toggleClass)) {
         elem.classList.remove(this.#toggleClass);
-      }
-      else {
+      } else {
         elem.classList.add(this.#toggleClass);
       }
     })
