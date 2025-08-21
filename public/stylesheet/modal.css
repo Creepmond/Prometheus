@@ -1,8 +1,40 @@
+@media (width >= 925px) {
+  dialog {
+    max-width: 800px;
+
+    border-radius: 8px;
+  }
+}
+@media (width < 925px) {
+  dialog {
+    max-width: calc(100% - 120px);
+  }
+}
+
 dialog {
-  background-color: var(--primary-dark);
+  width: fit-content;
 
   border-radius: 8px;
 }
 dialog::backdrop {
   background-color: #0003;
+}
+
+dialog .content-container {
+  background-color: rgba(21, 135, 248, var(--bg-opacity));
+
+  display: flexbox;
+}
+
+dialog .content {
+  background-color: rgba(148, 0, 211, var(--bg-opacity));
+}
+dialog button.close {
+  font-size: 16px;
+
+  padding: 8px 12px;
+  border-radius: 5px;
+
+  display: flex;
+  justify-self: end;
 }

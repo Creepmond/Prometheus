@@ -66,3 +66,12 @@ option {
 option::checkmark {
   content: none;
 }
+
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+}

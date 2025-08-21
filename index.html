@@ -17,16 +17,16 @@
     <link rel="stylesheet" href="public/stylesheet/revelation.css">
 
     <script type="module" src="src/component/blocks.js"></script>
-    <script type="module" src="src/component/toggle.js"></script>
-    <script type="module" src="src/component/modal.js"></script>
   </head>
   <body class="dark-theme">
 
 
 
 <dialog class="modal">
-  <span>yo</span>
-  <button class="close">close</button>
+  <div class="content-container">
+    <div class="content"><span>yuh</span></div>
+    <button class="close">Close</button>  
+  </div>
 </dialog>
 
 <header>
@@ -80,12 +80,16 @@
       </div>
     </div>
     <div class="edit-container">
-      <button class="add-revelation">Announce a Revelation</button>
+      <button id="creates-modal" class="add-revelation">Announce a Revelation</button>
       <button class="edit-revelation">Edit</button>
     </div>
   </section>
   <article class="revelation-container"></article>
 </main>
+
+
+
+<script type="module" src="src/component/modal/announce.js"></script>
 
   </body>
 </html>

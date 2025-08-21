@@ -12,7 +12,7 @@ header {
   z-index: 1;
 }
 
-.content-container {
+main.content-container {
   background-color: rgba(255, 127, 80, var(--bg-opacity));
 
   box-sizing: border-box;
@@ -55,6 +55,8 @@ article::-webkit-scrollbar-thumb {
 }
 
 article::-webkit-scrollbar-thumb:active {
+  background: var(--primary-dark-accent);
+
   cursor: grabbing;
 }
 
