@@ -79,6 +79,9 @@
   content: '| ';
   color: grey;
 }
+.revelation .bullet:not(.bullet:last-of-type) {
+  margin-bottom: 5px;
+}
 
 .revelation .tags {
   user-select: none;
