@@ -1,4 +1,4 @@
-import { revelation } from './data.js'
+import { revelation } from './data.js';
 
 
 

@@ -52,8 +52,8 @@ header .search-section {
   align-items: center;
 }
 
-header .filter-search,
-header .search-bar,
+header #filter-search,
+header #search-bar,
 header .search-button {
   background-color: white;
 
@@ -61,7 +61,7 @@ header .search-button {
 }
 
 /*/ Filter Search*/
-header .filter-search {
+header #filter-search {
   color: black;
 
   font-size: 14px;
@@ -75,14 +75,14 @@ header .filter-search {
 
   border-radius: 2px 0 0 0;
 }
-.filter-search::picker-icon {
+#filter-search::picker-icon {
   transition: rotate 0.2s;
 }
-.filter-search:open::picker-icon {
+#filter-search:open::picker-icon {
   rotate: -180deg;
 }
 
-select.filter-search option {
+select#filter-search option {
   color: black;
 
   font-size: 16px;
@@ -93,17 +93,19 @@ select.filter-search option {
   padding: 0;
 }
 
-.filter-search option:hover,
-.filter-search option:focus {
+#filter-search option:hover,
+#filter-search option:focus {
   background: var(--primary-light-accent);
 }
 
-.filter-search option:checked {
+#filter-search option:checked {
   font-weight: 700;
 }
 /*/ END - Filter Search */
 
-header .search-bar {
+header #search-bar {
+  color: black;
+
   flex: 1;
   max-width: 500px;
 

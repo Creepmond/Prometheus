@@ -1,4 +1,4 @@
-import Interactible from '../interactivity.js'
+import Interactible from '../interactivity.js';
 
 
 
@@ -6,4 +6,6 @@ import Interactible from '../interactivity.js'
 const toggleOrder = new Interactible('toggle', '.organize-container .order .symbol');
 
 const announceRevelation = new Interactible('modal', 'button.add-revelation');
-console.log(announceRevelation)
+////console.log(announceRevelation)
+
+const announceDescInput = new Interactible('input', '#announce-desc');

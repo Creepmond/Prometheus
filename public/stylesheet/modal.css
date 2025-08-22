@@ -21,13 +21,16 @@ dialog::backdrop {
 }
 
 dialog .content-container {
-  background-color: rgba(21, 135, 248, var(--bg-opacity));
+  background-color: rgba(255, 135, 248, var(--bg-opacity));
 
   display: flexbox;
 }
+dialog .content-container div {
+  margin-bottom: 10px;
+}
 
 dialog .content {
-  background-color: rgba(148, 0, 211, var(--bg-opacity));
+  background-color: rgba(231, 211, 0, var(--bg-opacity));
 }
 dialog button.close {
   font-size: 16px;

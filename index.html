@@ -3,9 +3,10 @@
   <head>
     <title>Prometheus</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 
     <link rel="stylesheet" href="public/stylesheet/theme/dark-theme.css">
 
@@ -16,18 +17,93 @@
     <link rel="stylesheet" href="public/stylesheet/modification.css">
     <link rel="stylesheet" href="public/stylesheet/revelation.css">
 
+    <link rel="stylesheet" href="public/stylesheet/modal/announce.css">
+
     <script type="module" src="src/component/blocks.js"></script>
   </head>
-  <body class="dark-theme">
+  <body theme="dark">
 
 
 
 <dialog class="modal">
   <div class="content-container">
-    <div class="content"><span>yuh</span></div>
+    <div class="content" modal="announce">
+
+
+
+      <div class="name-container">
+
+        <div id="single" class="name">
+          <div class="text">
+            <input
+              class="announce-name"
+              id="announce-sing-name"
+              type="text"
+              placeholder="Octadecafluorooctane"
+            > 
+            <span class="character-size numerical">
+              0/20
+            </span>
+          </div>
+
+          <div class="color">
+            <input
+              class="announce-color"
+              id="announce-sing-color"
+              type="color"
+            >  
+          </div>
+        </div>
+
+        <div id="dual" class="name">
+          <div class="text">
+            <input
+              class="announce-name"
+              id="announce-dual-name"
+              type="text"
+              placeholder="Perfluorooctane"
+            > 
+            <span class="character-size numerical">
+              0/20
+            </span>
+          </div>
+
+          <div class="color">
+            <input
+              class="announce-color"
+              id="announce-dual-color"
+              type="color"
+            >  <!--
+        <span class="character-size numerical">
+          0/500
+        </span>-->
+          </div>
+        </div>
+
+      </div>
+
+      <div class="desc">
+        <span
+          class="input"
+          id="announce-desc"
+          placeholder="Is a fluorocarbon liquid"
+        ></span>
+      </div>
+      <div>seriously i just wanna sleeep</div>
+      
+
+
+    </div>
     <button class="close">Close</button>  
   </div>
 </dialog>
+
+<!--<dialog class="modal">
+  <div class="content-container">
+    <div class="content"><span>yuh</span></div>
+    <button class="close">Close</button>  
+  </div>
+</dialog>-->
 
 <header>
   <div class="title-section">
@@ -38,14 +114,14 @@
   </div>
 
   <div class="search-section">
-    <select class="filter-search"><!--suggestion to self: make this contained in a div so that i can control the options a lot better, right now i sufficed with making its contents justified to the center, but in case there are longer tags and such, its easily more modifiable-->
+    <select id="filter-search"><!--suggestion to self: make this contained in a div so that i can control the options a lot better, right now i sufficed with making its contents justified to the center, but in case there are longer tags and such, its easily more modifiable-->
       <option value="all">All</option>
       <option value="dual">Dual</option>
       <option value="meta">Meta</option>
     </select>
 
     <input
-      class="search-bar"
+      id="search-bar"
       type="text"
       list="revelations"
       placeholder="Search here..."

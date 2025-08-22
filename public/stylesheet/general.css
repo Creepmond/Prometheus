@@ -1,5 +1,5 @@
 :root {
-  --bg-opacity: .;
+  --bg-opacity: .1;
 
   --primary-accent: #48bfe3;
   --primary-light-accent: #97d5e7;
@@ -18,8 +18,25 @@ dialog {
   border: none;
 }
 
-select, span, div, p {
+select,
+span,
+div,
+p {
   font-family: Raleway, Arial, Sans-serif;
+}
+
+.input,
+input,
+select.numerical,
+span.numerical,
+div.numerical,
+p.numerical {
+  font-family: Roboto, Monospace, Sans-serif;
+}
+
+.input,
+input {
+  font-weight: 300;
 }
 
 img.icon {
@@ -47,11 +64,14 @@ select:active {
 }
 
 select:focus,
+.input .editable:focus,
 input:focus {
   outline: none;
 }
 
 
+
+/*/ Defaults Select */
 
 select {
   appearance: base-select;
@@ -67,6 +87,36 @@ option::checkmark {
   content: none;
 }
 
+/*/ END - Defaults Select */
+
+
+
+
+
+/*/ Custom Inputs */
+
+.input {
+  position: relative;
+}
+.input .editable {
+  padding: 1px 1px;
+}
+.input::after {
+  content: attr(placeholder);
+  white-space: nowrap;
+  color: grey;
+
+  position: absolute;
+  left: 0;
+}
+
+/*/ END - Custom Inputs */
+
+
+
+
+
+/*/ Scrollbar */
 
 ::-webkit-scrollbar-track {
   border-radius: 6px;
